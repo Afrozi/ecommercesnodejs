@@ -1,0 +1,40 @@
+<% layout('/layouts/biolerplate.ejs') -%>
+<body>
+    <div class="row">
+        <div class="col-8 offset-2">
+    <h1>Edit Your Listing</h1>
+    <form action="/testlisting/<%= listing._id %>?_method=PUT" method="post">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+        <input name="listing[title]" placeholder="<%= listing.title %>" type="text" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea name="listing[description]" id="" cols="30" rows="10" placeholder="<%=
+        listing.description %>" class="form-control"></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="image" class="form-label">Image</label>
+        <input type="text" name="listing[image]" placeholder="<%= listing.image %>" class="form-control">
+    </div>
+    <div class="row">
+    <div class="mb-3 col-md-4">
+        <label for="number" class="form-label">Number</label> 
+        <input type="number" name="listing[price]" placeholder="<%= listing.price %>" class="form-control">
+    </div>
+    <div class="mb-3 col-md-8">
+        <label for="location" class="form-label">Location</label> 
+        <input type="text" name="listing[location]" placeholder="<%= listing.location %>" class="form-control">
+    </div>
+    </div>
+    <div class="mb-3">
+        <label for="location" class="form-label">Country</label>
+        <input type="text" name="listing[country]" placeholder="<%= listing.country %>" class="form-control">
+    </div>
+        <button class="btn btn-primary">Edit</button>
+        <br>
+        <br>
+    </form>
+    </div>
+</div>
+</body>
